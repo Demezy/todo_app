@@ -5,12 +5,9 @@ import 'package:todo_app/task_edit/presentation/task_edit_due_date_widget.dart';
 import 'package:todo_app/task_edit/presentation/task_edit_priority_dropdown.dart';
 import 'package:todo_app/task_edit/presentation/task_edit_separator_widget.dart';
 import 'package:todo_app/task_edit/presentation/task_edit_title_editor.dart';
-import 'package:todo_app/tasks_overview/domain/task_entry.dart';
+import 'package:todo_app/tasks_service/domain/task_entry.dart';
 
 class TaskEdit extends HookWidget {
-  final TaskEntry taskEntry;
-  final void Function(TaskEntry deletedEntry)? onDelete;
-  final void Function(TaskEntry updatedEntry)? onEditComplete;
   const TaskEdit({
     required this.taskEntry,
     this.onDelete,
@@ -18,12 +15,17 @@ class TaskEdit extends HookWidget {
     super.key,
   });
 
+  final TaskEntry taskEntry;
+  final void Function(TaskEntry deletedEntry)? onDelete;
+  final void Function(TaskEntry updatedEntry)? onEditComplete;
+
   @override
   Widget build(BuildContext context) {
     final entryTitleEdit = useTextEditingController(text: taskEntry.title);
     final choosedPriority = useState(taskEntry.priority);
     final dueDate = useState(taskEntry.dueDate);
-    onSaveTask() {
+
+    void onSaveTask() {
       final newEntry = taskEntry.copyWith(
         title: entryTitleEdit.text,
         priority: choosedPriority.value,
@@ -47,7 +49,7 @@ class TaskEdit extends HookWidget {
         ),
         actions: [
           TextButton(
-            onPressed: () => onSaveTask(),
+            onPressed: onSaveTask,
             child: const Text('СОХРАНИТЬ'),
           ),
         ],

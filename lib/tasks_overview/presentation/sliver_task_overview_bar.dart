@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class SliverTaskOverviewBar extends StatelessWidget {
-  final int doneTasksCount;
-  final bool areDoneTasksVisible;
-  final VoidCallback toggleVisibilityCallback;
   const SliverTaskOverviewBar({
     required this.doneTasksCount,
     required this.toggleVisibilityCallback,
     required this.areDoneTasksVisible,
     super.key,
   });
+
+  final int doneTasksCount;
+  final bool areDoneTasksVisible;
+  final VoidCallback toggleVisibilityCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class SliverTaskOverviewBar extends StatelessWidget {
             Text(
               'Выполнено - $doneTasksCount',
               style: Theme.of(context).textTheme.bodySmall,
-            )
+            ),
           ],
         ),
       ),

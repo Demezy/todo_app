@@ -31,15 +31,8 @@ class AppTheme {
   static final lightTheme = ThemeData(
     colorScheme: const ColorScheme.light(
       primary: Color(0xff007aff),
-      onPrimary: Colors.white,
       secondary: Color(0xff34c759),
       tertiary: Color(0xffff3b30),
-
-      /// background for scrollable content
-      background: Colors.white,
-
-      /// used for cards
-      surface: Colors.white,
 
       /// used for menus
       surfaceVariant: Colors.white,

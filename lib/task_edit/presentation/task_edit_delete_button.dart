@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TaskEditDeleteButton extends StatelessWidget {
-  final VoidCallback? onDelete;
   const TaskEditDeleteButton({
     this.onDelete,
     super.key,
   });
+
+  final VoidCallback? onDelete;
 
   @override
   Widget build(BuildContext context) {

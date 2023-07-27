@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class TaskEditTitleEditor extends StatelessWidget {
-  final TextEditingController textEditingController;
   const TaskEditTitleEditor({
     required this.textEditingController,
     super.key,
   });
+
+  final TextEditingController textEditingController;
 
   @override
   Widget build(BuildContext context) {

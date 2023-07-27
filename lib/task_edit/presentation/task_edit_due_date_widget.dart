@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:todo_app/task_edit/utils/date_time_formatted_extension.dart';
 
 class TaskEditDueDateWidget extends StatelessWidget {
-  final ValueNotifier<DateTime?> dueDate;
   const TaskEditDueDateWidget({
     required this.dueDate,
     super.key,
   });
+
+  final ValueNotifier<DateTime?> dueDate;
 
   @override
   Widget build(BuildContext context) {

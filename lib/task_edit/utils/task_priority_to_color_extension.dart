@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_app/tasks_overview/domain/task_entry.dart';
+import 'package:todo_app/tasks_service/domain/task_entry.dart';
 
 extension TaskPriorityToColorExtension on TaskPriority {
   Color color(BuildContext context) {

@@ -1,4 +1,4 @@
-import 'package:todo_app/tasks_overview/domain/task_entry.dart';
+import 'package:todo_app/tasks_service/domain/task_entry.dart';
 
 extension TaskPriorityToHumanStringExtension on TaskPriority {
   String humanString() {

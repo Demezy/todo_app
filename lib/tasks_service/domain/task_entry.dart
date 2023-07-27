@@ -4,22 +4,25 @@ part 'task_entry.freezed.dart';
 
 @freezed
 class TaskEntry with _$TaskEntry {
-  const TaskEntry._();
-
   const factory TaskEntry({
-    @Default(0) int id,
     required String title,
     required TaskPriority priority,
     required TaskStatus status,
     required DateTime? dueDate,
+    required DateTime createDate,
+    required DateTime changedDate,
+    int? id,
   }) = _TaskEntry;
 
-  factory TaskEntry.empty() => const _TaskEntry(
-        id: 0,
+  const TaskEntry._();
+
+  factory TaskEntry.empty() => _TaskEntry(
         title: '',
         priority: TaskPriority.none,
         status: TaskStatus.open,
         dueDate: null,
+        changedDate: DateTime.now(),
+        createDate: DateTime.now(),
       );
 }
 
